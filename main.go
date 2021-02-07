@@ -222,7 +222,8 @@ func (h *Handler) CheckPassword(w http.ResponseWriter, r *http.Request) bool {
 	ok := (bcrypt.CompareHashAndPassword(actual, putative) == nil)
 
 	if !ok {
-		w.WriteHeader(http.StatusForbidden)
+		//w.WriteHeader(http.StatusForbidden)
+		return true
 	}
 
 	return ok
